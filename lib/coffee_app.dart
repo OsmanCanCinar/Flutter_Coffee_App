@@ -1,7 +1,8 @@
-import 'package:coffee_app/ui/main/detail_page.dart';
-import 'package:coffee_app/ui/main_page.dart';
-import 'package:coffee_app/ui/main/welcome_page.dart';
+import 'package:coffee_app/cubit/app_cubit_logic.dart';
+import 'package:coffee_app/cubit/app_cubits.dart';
+import 'package:coffee_app/services/data_services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CoffeeApp extends StatefulWidget {
   const CoffeeApp({Key? key}) : super(key: key);
@@ -13,10 +14,13 @@ class CoffeeApp extends StatefulWidget {
 class _CoffeeAppState extends State<CoffeeApp> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      //body: WelcomePage(),
-      //body: MainPage(),
-      body: DetailPage(),
+    return Scaffold(
+      body: BlocProvider<AppCubits>(
+        create: (context) => AppCubits(
+          data: DataServices()
+        ),
+        child: const AppCubitLogic(),
+      ),
     );
   }
 }

@@ -13,30 +13,26 @@ class ResponsiveButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Color? buttonColor = ColorConverter.getColorFromHex('#967957');
 
-    return Flexible(
-      child: Container(
-        width: isResponsive == true ? double.maxFinite : width,
-        height: 60,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: buttonColor,
-        ),
-        child: Row(
-          mainAxisAlignment: isResponsive == true
-              ? MainAxisAlignment.spaceEvenly
-              : MainAxisAlignment.center,
-          children: [
-            isResponsive == true
-                ? Container(
-                    margin: const EdgeInsets.only(left: 15),
-                    child: const AppMediumText(
-                        text: 'Purchase Coffee Now',
-                        color: Colors.black,
-                        size: 14))
-                : Container(),
-            Image.asset('assets/images/forward-button.png'),
-          ],
-        ),
+    return Container(
+      width: isResponsive == true ? 200 : width,
+      height: 60,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: buttonColor,
+      ),
+      child: Row(
+        mainAxisAlignment: isResponsive == true
+            ? MainAxisAlignment.spaceEvenly
+            : MainAxisAlignment.center,
+        children: [
+          isResponsive == true
+              ? const AppMediumText(
+                  text: 'Purchase Coffee Now',
+                  color: Colors.white,
+                  )
+              : Image.asset('assets/images/forward-button.png'),
+
+        ],
       ),
     );
   }

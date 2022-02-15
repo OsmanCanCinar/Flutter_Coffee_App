@@ -160,7 +160,7 @@ class _DetailPageState extends State<DetailPage> {
                               'Black coffee is as simple as it gets with ground coffee beans steeped in hot water, served warm. And if you want to sound fancy, you can call black coffee by its proper name: cafe noir.'),
                       const SizedBox(height: 15),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           DetailButtons(
                             color: Colors.black,

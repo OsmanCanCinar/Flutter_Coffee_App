@@ -16,6 +16,10 @@ dependencies:
   adobe_xd: ^2.0.1
   device_preview: ^1.0.0
   flutter_launcher_name: ^0.0.1
+  bloc:
+  flutter_bloc:
+  equatable:
+  http:
 
 flutter_launcher_name:
   name: "Coffee App"

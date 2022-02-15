@@ -1,3 +1,5 @@
+import 'package:bloc/bloc.dart';
+import 'package:coffee_app/cubit/app_cubits.dart';
 import 'package:coffee_app/util/color_converter.dart';
 import 'package:coffee_app/util/landing_data.dart';
 import 'package:coffee_app/widgets/welcome_page/app_large_text.dart';
@@ -5,6 +7,7 @@ import 'package:coffee_app/widgets/welcome_page/app_medium_text.dart';
 import 'package:coffee_app/widgets/welcome_page/app_small_text.dart';
 import 'package:coffee_app/widgets/welcome_page/responsive_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -70,7 +73,14 @@ class _WelcomePageState extends State<WelcomePage> {
                       const Spacer(),
                       Container(
                         margin: const EdgeInsets.only(bottom: 50),
-                        child: ResponsiveButton(width: 150.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            BlocProvider.of<AppCubits>(context).getData();
+                          },
+                          child: SizedBox(
+                              width: 200, 
+                              child: ResponsiveButton(width: 150.0)),
+                        ),
                       ),
                     ],
                   ),

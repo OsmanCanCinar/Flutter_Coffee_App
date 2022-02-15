@@ -1,10 +1,10 @@
-import 'package:coffee_app/ui/bar_item_page.dart';
-import 'package:coffee_app/ui/my_page.dart';
-import 'package:coffee_app/ui/search_page.dart';
+import 'package:coffee_app/ui/navigation/bar_item_page.dart';
+import 'package:coffee_app/ui/navigation/my_page.dart';
+import 'package:coffee_app/ui/navigation/search_page.dart';
 import 'package:coffee_app/util/color_converter.dart';
 import 'package:flutter/material.dart';
 
-import 'main/home_page.dart';
+import '../main/home_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);

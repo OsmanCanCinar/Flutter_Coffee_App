@@ -16,9 +16,7 @@ class _CoffeeAppState extends State<CoffeeApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocProvider<AppCubits>(
-        create: (context) => AppCubits(
-          data: DataServices()
-        ),
+        create: (context) => AppCubits(data: DataServices()),
         child: const AppCubitLogic(),
       ),
     );

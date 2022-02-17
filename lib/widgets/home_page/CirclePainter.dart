@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class CirclePainter extends BoxPainter {
-
   final Color color;
   double radius;
 
@@ -9,12 +8,13 @@ class CirclePainter extends BoxPainter {
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-
     Paint _paint = Paint();
     _paint.color = color;
     _paint.isAntiAlias = true;
 
-    final Offset circleOffset = Offset(configuration.size!.width/2 - radius/2, configuration.size!.height - radius);
+    final Offset circleOffset = Offset(
+        configuration.size!.width / 2 - radius / 2,
+        configuration.size!.height - radius);
 
     canvas.drawCircle(offset + circleOffset, radius, _paint);
   }

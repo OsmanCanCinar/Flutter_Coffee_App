@@ -29,9 +29,8 @@ class ResponsiveButton extends StatelessWidget {
               ? const AppMediumText(
                   text: 'Purchase Coffee Now',
                   color: Colors.white,
-                  )
+                )
               : Image.asset('assets/images/forward-button.png'),
-
         ],
       ),
     );

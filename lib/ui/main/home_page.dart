@@ -22,7 +22,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
-
     return Scaffold(
       body: SafeArea(
         child: BlocBuilder<AppCubits, CubitStates>(
@@ -109,29 +108,28 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ),
                           ListView.builder(
                             itemBuilder: (BuildContext context, int index) {
-                              return Container(
-                                margin:
-                                const EdgeInsets.only(right: 15, top: 10),
-                                width: 200,
-                                height: 300,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.white,
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      'assets/images/welcome-' +
-                                          LandingData.imagePaths[index] +
-                                          '.png',
-                                    ),
-                                    fit: BoxFit.fitWidth,
+                              return GestureDetector(
+                                onTap: () {
+                                  BlocProvider.of<AppCubits>(context)
+                                      .detailPage(info[index]);
+                                },
+                                child: Container(
+                                  margin:
+                                      const EdgeInsets.only(right: 15, top: 10),
+                                  width: 200,
+                                  height: 300,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.white,
                                   ),
+                                  child: Center(child: Text(info[index].title)),
                                 ),
                               );
                             },
                             itemCount: info.length,
                             scrollDirection: Axis.vertical,
                           ),
-                          Text('bye'),
+                          const Text('bye'),
                         ],
                       ),
                     ),
@@ -191,8 +189,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ],
                 ),
               );
-            }
-            else {
+            } else {
               return Container();
             }
           },

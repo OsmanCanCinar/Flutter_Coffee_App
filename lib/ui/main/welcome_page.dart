@@ -78,7 +78,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             BlocProvider.of<AppCubits>(context).getData();
                           },
                           child: SizedBox(
-                              width: 200, 
+                              width: 200,
                               child: ResponsiveButton(width: 150.0)),
                         ),
                       ),
